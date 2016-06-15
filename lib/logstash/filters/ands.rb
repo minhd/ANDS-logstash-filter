@@ -57,8 +57,6 @@ class LogStash::Filters::ANDS < LogStash::Filters::Base
 
       end
 
-      print event
-
       # correct debugging log statement for reference
       # using the event.get API
       @logger.debug? && @logger.debug("Message is now: #{event.get("message")}")
