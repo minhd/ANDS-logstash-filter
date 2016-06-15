@@ -1,6 +1,8 @@
 # encoding: utf-8
 require "logstash/filters/base"
 require "logstash/namespace"
+require "logstash/timestamp"
+require "time"
 
 # This example filter will replace the contents of the default
 # message field with whatever you specify in the configuration.
@@ -48,10 +50,8 @@ class LogStash::Filters::ANDS < LogStash::Filters::Base
           value = result.join(":")
           event.set(key, value)
           if key == "date"
-            puts value
-            puts Date.iso8601(value)
-            puts event.get('@timestamp')
-            # event.set("@timestamp", Time.at(value).strftime('%Y-%m-%d %H:%M:%S'))
+            value = LogStash::Timestamp.parse_iso8601(Time.parse(value).iso8601)
+            event.set("@timestamp", value)
           end
         end
 
