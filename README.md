@@ -1,4 +1,4 @@
-# ANDS Logstash Plugin
+# ANDS Logstash Filter Plugin
 
 This is a plugin for [Logstash](https://github.com/elastic/logstash).
 
@@ -6,7 +6,8 @@ It is fully free and fully open source. The license is Apache 2.0, meaning you a
 
 ## Documentation
 
-TODO
+For dealing with ANDS specific logs
+
 
 ## Developing
 
@@ -15,7 +16,6 @@ TODO
 #### Code
 - To get started, you'll need JRuby with the Bundler gem installed.
 
-- Create a new plugin or clone and existing from the GitHub [logstash-plugins](https://github.com/logstash-plugins) organization. We also provide [example plugins](https://github.com/logstash-plugins?query=example).
 
 - Install dependencies
 ```sh
